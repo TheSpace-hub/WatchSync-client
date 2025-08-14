@@ -35,8 +35,9 @@ class Intro(Scene):
                                                  self.on_connect_button_pressed))
 
     async def on_connect_button_pressed(self, context: str):
-        self.remove_sprite('connect_button')
-        self.add_sprite('connect_waiting', Waiting(self.app, Vector2(760, 595), (400, 30),
+        connect_button: Button = self.get_sprite('connect_button')
+        connect_button.disabled = True
+        self.add_sprite('connect_waiting', Waiting(self.app, Vector2(760, 645), (400, 30),
                                                    CompletionStatus.WORKING))
 
     async def update(self):
