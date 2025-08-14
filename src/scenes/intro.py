@@ -71,6 +71,7 @@ class Intro(Scene):
                 return
 
             waiting.completion_status = CompletionStatus.SUCCESS
+            await self.app.change_scene('Cinema')
 
     @staticmethod
     async def can_connect(host: str) -> bool:
