@@ -63,7 +63,7 @@ class Intro(Scene):
 
             if not can_connect:
                 server_url_input: Input = self.get_sprite('server_url_input')
-                connect_button: Button = self.get_sprite('connect_button')
+                connect_button: Button = self.get_sprite('taste_connection_button')
 
                 waiting.completion_status = CompletionStatus.ERROR
                 connect_button.disabled = False
@@ -81,7 +81,7 @@ class Intro(Scene):
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(f'http://{host}:22020/taste') as response:
-                return (await response.json())['can_connect']
+                return (await response.json())['delicious']
 
     @staticmethod
     def is_valid_ip(ip_str):
