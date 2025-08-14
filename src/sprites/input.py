@@ -90,7 +90,7 @@ class Input(Sprite):
                              self.position.y <= pg.mouse.get_pos()[1] <= self.position.y + self.image.get_size()[1])
             self.update_view()
 
-        if self.selected:
+        if self.selected and not self.disabled:
             for key in self.app.omitted_buttons:
                 if 32 <= key <= 126 and not self.disabled and (len(self.text.text) < self.limit or self.limit <= 0):
                     self.text.text = InputFormatting.formatting(self.formatting, self.text.text + chr(key))
