@@ -68,7 +68,7 @@ class App:
         self._previous_mouse_location: tuple[int, int] = (0, 0)
         self.mouse_offset: tuple[int, int] = (0, 0)
 
-        pg.display.set_caption('Pygame Application')
+        pg.display.set_caption('WatchSync')
 
     async def loop(self):
         """The start of the application lifecycle.
