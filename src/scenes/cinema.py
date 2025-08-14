@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from src.app import App
 
 
-class Intro(Scene):
+class Cinema(Scene):
     """A class with a cinema.
     """
 
